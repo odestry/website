@@ -1,35 +1,31 @@
 import * as THREE from 'three';
-import {useRef, useState} from 'react';
-import {Canvas, useFrame, ThreeElements} from '@react-three/fiber';
-
-function Box(props: ThreeElements['mesh']) {
-  const mesh = useRef<THREE.Mesh>(null!);
-  const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
-  useFrame((state, delta) => (mesh.current.rotation.x += delta));
-  return (
-    <mesh
-      {...props}
-      ref={mesh}
-      scale={active ? 1.5 : 1}
-      onClick={(event) => setActive(!active)}
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-    </mesh>
-  );
-}
+import {Suspense} from 'react';
+import {Canvas} from '@react-three/fiber';
+import {Sky, Environment, Cloud} from '@react-three/drei';
 
 export default function Scene() {
   return (
-    <div className="absolute inset-0 w-full h-screen">
-      <Canvas>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} />
+    <div className="absolute inset-0 w-full h-screen -z-10">
+      <Canvas shadows camera={{position: [-50, -25, 150], fov: 15}}>
+        <Suspense fallback={null}>
+          <hemisphereLight intensity={1} />
+          <spotLight
+            angle={0.4}
+            penumbra={1}
+            position={[20, 30, 2.5]}
+            castShadow
+            shadow-bias={-0.00001}
+          />
+          <directionalLight
+            color="violet"
+            position={[-10, -10, 0]}
+            intensity={15}
+          />
+          <Cloud scale={3} position={[20, 0, 0]} />
+          <Cloud scale={2} position={[-20, 10, 0]} />
+          <Environment preset="city" />
+          <Sky />
+        </Suspense>
       </Canvas>
     </div>
   );

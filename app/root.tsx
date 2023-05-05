@@ -30,7 +30,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="flex flex-col min-h-screen antialiased bg-white">
+      <body>
         <Layout>
           <Outlet />
         </Layout>

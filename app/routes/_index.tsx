@@ -1,11 +1,14 @@
 import Scene from '~/components/scene';
+import Balancer from 'react-wrap-balancer';
+import config from 'site-config';
 
 export function meta() {
   return [
-    {title: 'Odystra'},
+    {title: config.title},
     {
       description:
-        'Shopify developer collective focused on open sourcing tools and packages in the Shopify ecosystem.',
+        config.description ||
+        'Odestry is a developer collective focused on open sourcing tools and packages in the Shopify ecosystem.',
     },
   ];
 }
@@ -13,8 +16,16 @@ export function meta() {
 export default function Index() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Heading title={config.title} />
       <Scene />
     </>
+  );
+}
+
+function Heading({title}: {title: string}) {
+  return (
+    <h1 className="font-semibold select-none leading-tighter drop-shadow-md text-black/90 leading-tight text-4xl md:text-6xl lg:text-[6vw]">
+      <Balancer>{title}</Balancer>
+    </h1>
   );
 }

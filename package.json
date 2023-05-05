@@ -13,6 +13,7 @@
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
+    "@react-three/drei": "^9.66.3",
     "@react-three/fiber": "^8.13.0",
     "@remix-run/react": "1.15.0",
     "@shopify/cli": "3.45.0",
@@ -24,6 +25,7 @@
     "isbot": "^3.6.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-wrap-balancer": "^0.4.1",
     "three": "^0.152.2"
   },
   "devDependencies": {
