@@ -24,7 +24,7 @@ export default function Index() {
 
 function Heading({title}: {title: string}) {
   return (
-    <h1 className="font-semibold select-none leading-tighter drop-shadow-md text-black/90 leading-tight text-4xl md:text-6xl lg:text-[6vw]">
+    <h1 className="font-semibold select-none leading-tighter drop-shadow-md text-black/90 leading-tight text-3xl md:text-6xl lg:text-[6vw]">
       <Balancer>{title}</Balancer>
     </h1>
   );

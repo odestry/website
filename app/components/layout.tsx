@@ -3,15 +3,15 @@ import config from 'site-config';
 
 export function Layout({children}: {children: React.ReactNode}) {
   return (
-    <div className="flex flex-col min-h-screen antialiased bg-white px-6 md:px-8 lg:px-12 w-full">
+    <div className="flex flex-col min-h-screen antialiased px-3 md:px-6 lg:px-12 w-full">
       <main
         role="main"
         id="mainContent"
-        className="grid place-items-center outline-none h-[calc(100vh-4rem)]"
+        className="grid place-items-center outline-none h-[calc(100vh-2rem)] md:h-[calc(100vh-4rem)]"
       >
         {children}
       </main>
-      <footer className="flex items-center justify-between h-4">
+      <footer className="flex items-center justify-between h-4 md:h-8">
         <ul className="flex items-center gap-x-4 list-none">
           {config.links.map((link) => (
             <li key={link.name}>
