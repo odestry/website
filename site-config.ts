@@ -16,7 +16,11 @@ export default {
     },
     {
       name: 'Discord',
-      url: 'https://discord.gg/odestry',
+      url: 'https://discord.gg/myY4Mzbv8E',
+    },
+    {
+      name: 'Docs',
+      url: 'https://odestry.vercel.app',
     },
   ],
   poweredBy: {

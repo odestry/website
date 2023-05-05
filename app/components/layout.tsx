@@ -7,11 +7,11 @@ export function Layout({children}: {children: React.ReactNode}) {
       <main
         role="main"
         id="mainContent"
-        className="grid place-items-center outline-none h-[calc(100vh-2rem)] md:h-[calc(100vh-4rem)]"
+        className="grid place-items-center outline-none h-[calc(100vh-3rem)] md:h-[calc(100vh-4rem)]"
       >
         {children}
       </main>
-      <footer className="flex items-center justify-between h-4 md:h-8">
+      <footer className="flex flex-col md:flex-row md:items-center justify-between h-6 md:h-8">
         <ul className="flex items-center gap-x-4 list-none">
           {config.links.map((link) => (
             <li key={link.name}>
