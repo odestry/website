@@ -7,7 +7,7 @@ export default function Scene() {
     <div className="absolute inset-0 w-full h-screen -z-10">
       <Canvas shadows camera={{position: [-50, -25, 150], fov: 15}}>
         <Suspense fallback={null}>
-          <hemisphereLight intensity={5} />
+          <hemisphereLight intensity={1} />
           <spotLight
             angle={0.4}
             penumbra={1}
@@ -18,7 +18,7 @@ export default function Scene() {
           <directionalLight
             color="violet"
             position={[-10, -10, 0]}
-            intensity={10}
+            intensity={1.5}
           />
           <Cloud scale={1} position={[20, 0, 0]} />
           <Cloud scale={2} position={[-20, 10, 0]} />
