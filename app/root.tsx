@@ -1,15 +1,14 @@
-import {type LinksFunction, type LoaderArgs} from '@shopify/remix-oxygen';
+import {type LinksFunction} from '@shopify/remix-oxygen';
 import {
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLoaderData,
 } from '@remix-run/react';
-import type {Shop} from '@shopify/hydrogen/storefront-api-types';
 import styles from './styles/app.css';
 import favicon from '../public/favicon.svg';
+import {Layout} from './components/layout';
 
 export const links: LinksFunction = () => {
   return [
@@ -18,24 +17,11 @@ export const links: LinksFunction = () => {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
     },
-    {
-      rel: 'preconnect',
-      href: 'https://shop.app',
-    },
     {rel: 'icon', type: 'image/svg+xml', href: favicon},
   ];
 };
 
-export async function loader({context}: LoaderArgs) {
-  const layout = await context.storefront.query<{shop: Shop}>(LAYOUT_QUERY);
-  return {layout};
-}
-
 export default function App() {
-  const data = useLoaderData<typeof loader>();
-
-  const {name} = data.layout.shop;
-
   return (
     <html lang="en">
       <head>
@@ -44,22 +30,13 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <p>This is a custom storefront powered by {name}</p>
-        <Outlet />
+      <body className="flex flex-col min-h-screen antialiased bg-white">
+        <Layout>
+          <Outlet />
+        </Layout>
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
 }
-
-const LAYOUT_QUERY = `#graphql
-  query layout {
-    shop {
-      name
-      description
-    }
-  }
-`;

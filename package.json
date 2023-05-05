@@ -1,5 +1,5 @@
 {
-  "name": "hello-world",
+  "name": "odystra",
   "private": true,
   "sideEffects": false,
   "version": "0.0.0",
@@ -13,6 +13,7 @@
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
+    "@react-three/fiber": "^8.13.0",
     "@remix-run/react": "1.15.0",
     "@shopify/cli": "3.45.0",
     "@shopify/cli-hydrogen": "^4.1.1",
@@ -20,20 +21,22 @@
     "@shopify/remix-oxygen": "^1.0.5",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
-    "isbot": "^3.6.6",
+    "isbot": "^3.6.10",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "three": "^0.152.2"
   },
   "devDependencies": {
     "@remix-run/dev": "1.15.0",
     "@shopify/oxygen-workers-types": "^3.17.2",
     "@shopify/prettier-config": "^1.1.2",
-    "@types/eslint": "^8.4.10",
-    "@types/react": "^18.0.20",
-    "@types/react-dom": "^18.0.6",
-    "eslint": "^8.20.0",
+    "@types/eslint": "^8.37.0",
+    "@types/react": "^18.2.5",
+    "@types/react-dom": "^18.2.4",
+    "@types/three": "^0.152.0",
+    "eslint": "^8.39.0",
     "eslint-plugin-hydrogen": "0.12.2",
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.8",
     "tailwindcss": "^3.3.2",
     "typescript": "^4.9.5"
   },
