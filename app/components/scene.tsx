@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import {Suspense} from 'react';
 import {Canvas} from '@react-three/fiber';
 import {Sky, Environment, Cloud} from '@react-three/drei';
@@ -19,7 +18,7 @@ export default function Scene() {
           <directionalLight
             color="violet"
             position={[-10, -10, 0]}
-            intensity={15}
+            intensity={10}
           />
           <Cloud scale={3} position={[20, 0, 0]} />
           <Cloud scale={2} position={[-20, 10, 0]} />
