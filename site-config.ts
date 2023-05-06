@@ -4,7 +4,7 @@ export default {
   description:
     'Shopify developer collective focused on open sourcing tools and packages in the Shopify ecosystem.',
   title:
-    ' Odestry is a developer collective focused on open sourcing tools and packages in the Shopify ecosystem.',
+    'A developer collective focused on open sourcing tools and packages in the Shopify ecosystem.',
   links: [
     {
       name: 'Twitter',
@@ -24,8 +24,7 @@ export default {
     },
   ],
   poweredBy: {
-    name: 'Shopify',
+    name: 'Powered by Shopify',
     url: 'https://shopify.com',
-    label: 'Powered by',
   },
 };

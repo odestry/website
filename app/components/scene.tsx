@@ -5,25 +5,24 @@ import {Sky, Environment, Cloud} from '@react-three/drei';
 export default function Scene() {
   return (
     <div className="absolute inset-0 w-full h-screen -z-10">
-      <Canvas shadows camera={{position: [-50, -25, 150], fov: 15}}>
+      <Canvas shadows camera={{position: [-50, -25, 120], fov: 75}}>
         <Suspense fallback={null}>
-          <hemisphereLight intensity={1} />
-          <spotLight
-            angle={0.4}
-            penumbra={1}
-            position={[20, 30, 2.5]}
-            castShadow
-            shadow-bias={-0.00001}
-          />
+          <ambientLight intensity={0.6} />
           <directionalLight
-            color="violet"
+            color="white"
             position={[-10, -10, 0]}
-            intensity={1.5}
+            intensity={2}
           />
-          <Cloud scale={1} position={[20, 0, 0]} />
-          <Cloud scale={2} position={[-20, 10, 0]} />
+          <Cloud scale={8} position={[20, 0, 0]} />
+          <Cloud scale={6} position={[-20, 10, 0]} />
           <Environment preset="city" />
-          <Sky />
+          <Sky
+            azimuth={0.1}
+            turbidity={10}
+            rayleigh={0.5}
+            inclination={0.6}
+            distance={1000}
+          />
         </Suspense>
       </Canvas>
     </div>

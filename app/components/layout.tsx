@@ -3,15 +3,23 @@ import config from 'site-config';
 
 export function Layout({children}: {children: React.ReactNode}) {
   return (
-    <div className="flex flex-col min-h-screen antialiased px-3 md:px-6 lg:px-12 w-full">
+    <div className="flex flex-col justify-between min-h-screen antialiased px-3 md:px-6 lg:px-12 w-full">
+      <header className="flex items-center justify-between py-4 md:py-6">
+        <Link
+          to="/"
+          className="md:text-xl tracking-tight select-none font-medium text-black/80"
+        >
+          {config.name}
+        </Link>
+      </header>
       <main
         role="main"
         id="mainContent"
-        className="grid place-items-center outline-none h-[calc(100vh-3rem)] md:h-[calc(100vh-4rem)]"
+        className="grid place-items-center outline-none"
       >
         {children}
       </main>
-      <footer className="flex flex-col md:flex-row md:items-center justify-between h-6 md:h-8">
+      <footer className="flex flex-col md:flex-row md:items-center justify-between py-4 md:py-6">
         <ul className="flex items-center gap-x-4 list-none">
           {config.links.map((link) => (
             <li key={link.name}>
@@ -25,12 +33,11 @@ export function Layout({children}: {children: React.ReactNode}) {
             </li>
           ))}
         </ul>
-        <p className="text-sm text-black/80">
-          {config.poweredBy.label}{' '}
+        <div className="hidden md:block text-sm text-black/80">
           <Link to={config.poweredBy.url} target="_blank">
             {config.poweredBy.name}
           </Link>
-        </p>
+        </div>
       </footer>
     </div>
   );

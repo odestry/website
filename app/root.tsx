@@ -7,7 +7,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import styles from './styles/app.css';
-import favicon from '../public/favicon.jpg';
+import favicon from '../public/favicon.png';
 import {Layout} from './components/layout';
 
 export const links: LinksFunction = () => {
@@ -17,7 +17,7 @@ export const links: LinksFunction = () => {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
     },
-    {rel: 'icon', type: 'image/jpeg', href: favicon},
+    {rel: 'icon', type: 'image/png', href: favicon},
   ];
 };
 
