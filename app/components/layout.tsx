@@ -3,7 +3,7 @@ import config from 'site-config';
 
 export function Layout({children}: {children: React.ReactNode}) {
   return (
-    <div className="flex flex-col justify-between min-h-screen antialiased px-3 md:px-6 lg:px-12 w-full">
+    <div className="flex flex-col justify-between h-screen antialiased px-3 md:px-6 lg:px-12 w-full">
       <header className="flex items-center justify-between py-4 md:py-6">
         <Link
           to="/"

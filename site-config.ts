@@ -27,4 +27,5 @@ export default {
     name: 'Powered by Shopify',
     url: 'https://shopify.com',
   },
+  color: '#7e9bb9',
 };
