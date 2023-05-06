@@ -4,7 +4,7 @@ import {Sky, Environment, Cloud} from '@react-three/drei';
 
 export default function Scene() {
   return (
-    <div className="absolute inset-0 w-full h-screen -z-10 bg-blue-100">
+    <div className="absolute inset-0 w-full h-screen -z-10 bg-[#7e9bb9]">
       <Canvas shadows camera={{position: [-50, -25, 120], fov: 75}}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.6} />
